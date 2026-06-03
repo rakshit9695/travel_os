@@ -15,7 +15,7 @@ export const travelers: Traveler[] = [
     ],
     docAssignments: [{ docType: 'Passport (own)' }, { docType: 'Hotel vouchers' }],
     avatar: 'NM',
-    color: '#0F3D3E',
+    color: '#1E2D4E',
   },
   {
     id: 'rachana',
@@ -31,7 +31,7 @@ export const travelers: Traveler[] = [
     ],
     docAssignments: [{ docType: 'Passport (own)' }, { docType: 'Family medical kit' }],
     avatar: 'RM',
-    color: '#1A726C',
+    color: '#2D4E9C',
   },
   {
     id: 'rakshit',
@@ -51,7 +51,7 @@ export const travelers: Traveler[] = [
       { docType: 'Swiss Travel Pass QR codes' },
     ],
     avatar: 'Rk',
-    color: '#2BB6AB',
+    color: '#3A66C8',
   },
   {
     id: 'ronit',
@@ -67,6 +67,6 @@ export const travelers: Traveler[] = [
     ],
     docAssignments: [{ docType: 'Passport (own — carried by parent)' }],
     avatar: 'Ro',
-    color: '#4FD1C5',
+    color: '#4C82EC',
   },
 ];

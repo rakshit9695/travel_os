@@ -246,7 +246,7 @@ function DayPanel({ day }: { day: Day }) {
                   }`}
                 >
                   <TriangleAlert className="mt-0.5 h-4 w-4 shrink-0" />
-                  <div>
+                  <div className="min-w-0">
                     <span className="font-semibold">{w.message}</span>
                     {w.fix && <span className="opacity-80"> {w.fix}</span>}
                   </div>

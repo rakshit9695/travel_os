@@ -33,4 +33,4 @@ export const seedTrip: Trip = {
   safety,
 };
 
-export const SCHEMA_VERSION = 3;
+export const SCHEMA_VERSION = 4;

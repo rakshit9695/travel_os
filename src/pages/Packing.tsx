@@ -134,7 +134,7 @@ export default function Packing() {
         <div className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-glacier-100 text-glacier-600 dark:bg-glacier-500/20 dark:text-glacier-200">
           <Sparkles className="h-4 w-4" />
         </div>
-        <p className="text-sm text-ink-soft dark:text-glacier-100/80">
+        <p className="min-w-0 text-sm text-ink-soft dark:text-glacier-100/80">
           June is <b>summer in the valleys</b> (18–26°C) — light clothing is enough most days. Warm layers, gloves and a beanie are
           flagged <b>only</b> for the three high-altitude excursions: <b>Jungfraujoch (3,454 m)</b>, <b>Grindelwald-First (2,168 m)</b> and{' '}
           <b>Mt. Pilatus (2,128 m)</b>, where it's near-freezing year-round. Swiss sockets are <b>Type J</b>.

@@ -92,12 +92,14 @@ function SettingsPanel({ onClose }: { onClose: () => void }) {
   ];
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 8, scale: 0.98 }}
-      animate={{ opacity: 1, y: 0, scale: 1 }}
-      exit={{ opacity: 0, y: 8, scale: 0.98 }}
-      className="card absolute right-0 top-12 z-50 w-72 p-4 shadow-lift"
-    >
+    <>
+      <div className="fixed inset-0 z-40" onClick={onClose} aria-hidden />
+      <motion.div
+        initial={{ opacity: 0, y: 8, scale: 0.98 }}
+        animate={{ opacity: 1, y: 0, scale: 1 }}
+        exit={{ opacity: 0, y: 8, scale: 0.98 }}
+        className="absolute right-0 top-12 z-50 w-72 max-w-[calc(100vw-1.5rem)] rounded-3xl border border-pine-100 bg-white p-4 shadow-lift dark:border-pine-700 dark:bg-pine-800"
+      >
       <div className="mb-3 flex items-center justify-between">
         <h3 className="font-display text-sm font-bold">Settings</h3>
         <button onClick={onClose} className="text-ink-mute hover:text-ink">
@@ -143,7 +145,8 @@ function SettingsPanel({ onClose }: { onClose: () => void }) {
       >
         <RotateCcw className="h-4 w-4" /> Reset to seed data
       </button>
-    </motion.div>
+      </motion.div>
+    </>
   );
 }
 
@@ -286,11 +289,13 @@ function Sidebar() {
 
 export function AppShell({ children }: { children: ReactNode }) {
   return (
-    <div className="flex min-h-screen">
+    <div className="flex min-h-screen w-full overflow-x-hidden">
       <Sidebar />
-      <div className="flex min-h-screen flex-1 flex-col">
+      {/* min-w-0 lets this column shrink to the viewport; without it, wide
+          content (charts, long rows) forces it past screen width on phones. */}
+      <div className="flex min-h-screen min-w-0 flex-1 flex-col">
         <HeaderBar />
-        <main className="flex-1 px-4 pb-28 pt-4 sm:px-6 lg:px-10 lg:pb-10 lg:pt-8">
+        <main className="min-w-0 flex-1 overflow-x-hidden px-4 pb-28 pt-4 sm:px-6 lg:px-10 lg:pb-10 lg:pt-8">
           <div className="mx-auto w-full max-w-5xl">{children}</div>
         </main>
         <BottomTabs />
