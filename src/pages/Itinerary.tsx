@@ -122,15 +122,15 @@ function ActivityRow({
           {a.bookingNote && <Chip tone="warn" className="ml-1 !py-0.5 !text-[10px]">book ahead</Chip>}
         </div>
       </div>
-      <div className="flex shrink-0 flex-col gap-1">
+      <div className="flex shrink-0 flex-col gap-1.5">
         {a.mapUrl && (
-          <a href={a.mapUrl} target="_blank" rel="noreferrer" className="grid h-7 w-7 place-items-center rounded-lg bg-pine-50 text-pine-600 dark:bg-pine-700/50 dark:text-glacier-200">
-            <MapPin className="h-3.5 w-3.5" />
+          <a href={a.mapUrl} target="_blank" rel="noreferrer" className="grid h-9 w-9 place-items-center rounded-lg bg-pine-50 text-pine-600 dark:bg-pine-700/50 dark:text-glacier-200">
+            <MapPin className="h-4 w-4" />
           </a>
         )}
         {onRemove && (
-          <button onClick={onRemove} className="grid h-7 w-7 place-items-center rounded-lg bg-swiss/10 text-swiss">
-            <X className="h-3.5 w-3.5" />
+          <button onClick={onRemove} className="grid h-9 w-9 place-items-center rounded-lg bg-swiss/10 text-swiss">
+            <X className="h-4 w-4" />
           </button>
         )}
       </div>
@@ -168,7 +168,7 @@ function AddActivitySheet({
         initial={{ y: 60, opacity: 0.6 }}
         animate={{ y: 0, opacity: 1 }}
         exit={{ y: 60, opacity: 0 }}
-        className="card max-h-[80vh] w-full overflow-y-auto rounded-b-none p-5 sm:max-w-lg sm:rounded-3xl"
+        className="card sheet-safe max-h-[82vh] w-full overflow-y-auto rounded-b-none p-5 sm:max-w-lg sm:rounded-3xl"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="mb-3 flex items-center justify-between">
@@ -307,8 +307,8 @@ function DayPanel({ day }: { day: Day }) {
                       )}
                     </div>
                     {place && (
-                      <a href={place.mapUrl} target="_blank" rel="noreferrer" className="grid h-7 w-7 place-items-center rounded-lg bg-white text-glacier-600 dark:bg-pine-800 dark:text-glacier-200">
-                        <MapPin className="h-3.5 w-3.5" />
+                      <a href={place.mapUrl} target="_blank" rel="noreferrer" className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-white text-glacier-600 dark:bg-pine-800 dark:text-glacier-200">
+                        <MapPin className="h-4 w-4" />
                       </a>
                     )}
                   </div>

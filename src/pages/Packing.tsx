@@ -149,7 +149,7 @@ export default function Packing() {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder='"Which bag has the chargers?"'
-            className="w-full bg-transparent text-sm outline-none"
+            className="w-full bg-transparent text-base sm:text-sm outline-none"
           />
         </div>
         {filtered && (

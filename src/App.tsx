@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence, motion, MotionConfig } from 'framer-motion';
 import { StoreProvider, useStore } from './lib/store';
 import { ErrorBoundary } from './components/ErrorBoundary';
 import { Splash } from './components/Splash';
@@ -65,11 +65,13 @@ function Gate() {
 export default function App() {
   return (
     <ErrorBoundary>
-      <StoreProvider>
-        <BrowserRouter>
-          <Gate />
-        </BrowserRouter>
-      </StoreProvider>
+      <MotionConfig reducedMotion="user">
+        <StoreProvider>
+          <BrowserRouter>
+            <Gate />
+          </BrowserRouter>
+        </StoreProvider>
+      </MotionConfig>
     </ErrorBoundary>
   );
 }

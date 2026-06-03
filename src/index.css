@@ -17,10 +17,33 @@
   #root {
     height: 100%;
   }
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
   body {
     @apply bg-canvas text-ink font-sans antialiased;
     background-image: radial-gradient(120% 120% at 50% -10%, #ffffff 0%, #f5f7fb 55%, #e9edf5 100%);
     background-attachment: fixed;
+    /* phone polish: no rubber-band, no tap flash, no sideways scroll.
+       overflow-x: clip (not hidden) avoids making body a scroll container,
+       which would break the sticky mobile header. */
+    overflow-x: clip;
+    overscroll-behavior-y: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+  button,
+  a,
+  input,
+  select,
+  textarea {
+    -webkit-tap-highlight-color: transparent;
+  }
+  /* interactive controls get a comfortable minimum touch target */
+  button,
+  a[role='button'],
+  [role='tab'] {
+    touch-action: manipulation;
   }
   html.dark body {
     @apply bg-pine-900 text-canvas;
@@ -76,7 +99,8 @@
     @apply text-xs font-semibold uppercase tracking-wider text-ink-mute;
   }
   .input {
-    @apply w-full rounded-xl border border-pine-100 bg-white px-3.5 py-2.5 text-sm text-ink outline-none transition focus:border-glacier-400 focus:ring-2 focus:ring-glacier-200 dark:bg-pine-800 dark:border-pine-600 dark:text-canvas dark:focus:ring-glacier-500/40;
+    /* 16px on mobile prevents iOS auto-zoom on focus; 14px from sm+ */
+    @apply w-full rounded-xl border border-pine-100 bg-white px-3.5 py-2.5 text-base sm:text-sm text-ink outline-none transition focus:border-glacier-400 focus:ring-2 focus:ring-glacier-200 dark:bg-pine-800 dark:border-pine-600 dark:text-canvas dark:focus:ring-glacier-500/40;
   }
   .section-title {
     @apply text-xs font-bold uppercase tracking-[0.14em] text-ink-mute dark:text-glacier-200/80;
@@ -105,4 +129,30 @@
 }
 .pt-safe {
   padding-top: calc(env(safe-area-inset-top, 0px));
+}
+/* bottom sheets: clear the home-indicator / nav bar on phones */
+.sheet-safe {
+  padding-bottom: calc(1.25rem + env(safe-area-inset-bottom, 0px));
+}
+
+/* Concierge chat column: dynamic viewport height so the input never hides
+   behind the mobile browser chrome or the bottom tab bar. */
+.chat-h {
+  height: calc(100dvh - 13.5rem);
+}
+@media (min-width: 1024px) {
+  .chat-h {
+    height: calc(100dvh - 7rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
 }

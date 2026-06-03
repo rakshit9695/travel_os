@@ -25,7 +25,7 @@ export default function Concierge() {
   };
 
   return (
-    <div className="flex h-[calc(100vh-10rem)] flex-col lg:h-[calc(100vh-7rem)]">
+    <div className="chat-h flex flex-col">
       <PageHeader
         title="AI Concierge"
         subtitle="Grounded in your live trip data — works offline."
@@ -126,7 +126,7 @@ export default function Concierge() {
             value={input}
             onChange={(e) => setInput(e.target.value)}
             placeholder="Ask anything about your trip…"
-            className="w-full bg-transparent py-2 text-sm outline-none"
+            className="w-full bg-transparent py-2 text-base sm:text-sm outline-none"
           />
         </div>
         <button type="submit" disabled={busy || !input.trim()} className="btn-primary !px-4">

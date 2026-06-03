@@ -53,9 +53,9 @@ function TravelerCard({ traveler }: { traveler: Traveler }) {
             </div>
             <button
               onClick={() => (editing ? save() : setEditing(true))}
-              className="grid h-7 w-7 place-items-center rounded-lg bg-pine-50 text-pine-600 dark:bg-pine-700/50 dark:text-glacier-200"
+              className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-pine-50 text-pine-600 dark:bg-pine-700/50 dark:text-glacier-200"
             >
-              {editing ? <Check className="h-4 w-4" /> : <Pencil className="h-3.5 w-3.5" />}
+              {editing ? <Check className="h-4 w-4" /> : <Pencil className="h-4 w-4" />}
             </button>
           </div>
 

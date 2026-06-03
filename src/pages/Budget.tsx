@@ -89,7 +89,7 @@ function AddExpense({ onClose }: { onClose: () => void }) {
         initial={{ y: 60 }}
         animate={{ y: 0 }}
         exit={{ y: 60 }}
-        className="card max-h-[88vh] w-full overflow-y-auto rounded-b-none p-5 sm:max-w-md sm:rounded-3xl"
+        className="card sheet-safe max-h-[88vh] w-full overflow-y-auto rounded-b-none p-5 sm:max-w-md sm:rounded-3xl"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="mb-4 flex items-center justify-between">
@@ -380,8 +380,8 @@ export default function Budget() {
               <div className="font-display font-bold">{formatCHF(e.actualCHF || e.plannedCHF)}</div>
               {e.actualCHF === 0 && <div className="text-[10px] font-semibold text-amber-600">planned</div>}
             </div>
-            <button onClick={() => deleteExpense(e.id)} className="grid h-7 w-7 shrink-0 place-items-center rounded-lg text-ink-mute hover:bg-swiss/10 hover:text-swiss">
-              <Trash2 className="h-3.5 w-3.5" />
+            <button onClick={() => deleteExpense(e.id)} className="grid h-9 w-9 shrink-0 place-items-center rounded-lg text-ink-mute hover:bg-swiss/10 hover:text-swiss">
+              <Trash2 className="h-4 w-4" />
             </button>
           </div>
         ))}
