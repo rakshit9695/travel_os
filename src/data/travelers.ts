@@ -1,0 +1,72 @@
+import type { Traveler } from '../types';
+
+export const travelers: Traveler[] = [
+  {
+    id: 'nitin',
+    name: 'Nitin Mishra',
+    role: 'Father',
+    age: 'adult',
+    isMinor: false,
+    dietary: 'Vegetarian',
+    allergies: 'None',
+    meds: ['Blood pressure (Telmisartan) — morning'],
+    emergencyContacts: [
+      { name: 'Rachana Mishra', relation: 'Wife', phone: '+91 98XXXXXX01' },
+    ],
+    docAssignments: [{ docType: 'Passport (own)' }, { docType: 'Hotel vouchers' }],
+    avatar: 'NM',
+    color: '#0F3D3E',
+  },
+  {
+    id: 'rachana',
+    name: 'Rachana Mishra',
+    role: 'Mother',
+    age: 'adult',
+    isMinor: false,
+    dietary: 'Pure vegetarian (Jain-friendly preferred)',
+    allergies: 'Lactose — mild',
+    meds: ['Thyroid (Thyronorm) — empty stomach AM'],
+    emergencyContacts: [
+      { name: 'Nitin Mishra', relation: 'Husband', phone: '+91 98XXXXXX02' },
+    ],
+    docAssignments: [{ docType: 'Passport (own)' }, { docType: 'Family medical kit' }],
+    avatar: 'RM',
+    color: '#1A726C',
+  },
+  {
+    id: 'rakshit',
+    name: 'Rakshit Mishra',
+    role: 'Son',
+    age: 22,
+    isMinor: false,
+    dietary: 'Vegetarian (eggs ok)',
+    allergies: 'None',
+    meds: [],
+    emergencyContacts: [
+      { name: 'Nitin Mishra', relation: 'Father', phone: '+91 98XXXXXX02' },
+    ],
+    docAssignments: [
+      { docType: 'All 4 passports (backup scans)', note: 'Trip coordinator' },
+      { docType: 'Visa printouts' },
+      { docType: 'Swiss Travel Pass QR codes' },
+    ],
+    avatar: 'Rk',
+    color: '#2BB6AB',
+  },
+  {
+    id: 'ronit',
+    name: 'Ronit Mishra',
+    role: 'Son',
+    age: 17,
+    isMinor: true,
+    dietary: 'Vegetarian',
+    allergies: 'Peanuts — carries antihistamine',
+    meds: ['Cetirizine (as needed)'],
+    emergencyContacts: [
+      { name: 'Rachana Mishra', relation: 'Mother', phone: '+91 98XXXXXX01' },
+    ],
+    docAssignments: [{ docType: 'Passport (own — carried by parent)' }],
+    avatar: 'Ro',
+    color: '#4FD1C5',
+  },
+];

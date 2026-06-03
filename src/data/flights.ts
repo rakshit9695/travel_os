@@ -1,0 +1,78 @@
+import type { Flight } from '../types';
+
+// Etihad — both journeys route via Abu Dhabi (AUH). Connections, not direct.
+// Times are local to each airport. Flight numbers are representative placeholders.
+export const flights: Flight[] = [
+  {
+    id: 'outbound',
+    direction: 'outbound',
+    carrier: 'Etihad',
+    cabin: 'Economy',
+    baggageAllowance: '2 × 23 kg checked · 7 kg cabin per traveler',
+    contact: '+91 22 6177 0000 (Etihad India)',
+    bookingRef: 'EY-MISHRA-9F3K',
+    layoverMin: 130,
+    legs: [
+      {
+        from: 'BOM',
+        fromCity: 'Mumbai',
+        to: 'AUH',
+        toCity: 'Abu Dhabi',
+        depart: '2026-06-16T23:03:00',
+        arrive: '2026-06-17T00:25:00',
+        flightNo: 'EY 203',
+        terminal: 'T2 (BOM) → T1 (AUH)',
+        aircraft: 'Boeing 787-9',
+        durationMin: 202,
+      },
+      {
+        from: 'AUH',
+        fromCity: 'Abu Dhabi',
+        to: 'GVA',
+        toCity: 'Geneva',
+        depart: '2026-06-17T02:35:00',
+        arrive: '2026-06-17T07:15:00',
+        flightNo: 'EY 51',
+        terminal: 'T1 (AUH) → Main (GVA)',
+        aircraft: 'Airbus A350-1000',
+        durationMin: 400,
+      },
+    ],
+  },
+  {
+    id: 'return',
+    direction: 'return',
+    carrier: 'Etihad',
+    cabin: 'Economy',
+    baggageAllowance: '2 × 23 kg checked · 7 kg cabin per traveler',
+    contact: '+41 22 555 0000 (Etihad Switzerland)',
+    bookingRef: 'EY-MISHRA-9F3K',
+    layoverMin: 145,
+    legs: [
+      {
+        from: 'ZRH',
+        fromCity: 'Zurich',
+        to: 'AUH',
+        toCity: 'Abu Dhabi',
+        depart: '2026-06-24T15:55:00',
+        arrive: '2026-06-24T23:50:00',
+        flightNo: 'EY 74',
+        terminal: 'Main (ZRH) → T1 (AUH)',
+        aircraft: 'Boeing 787-9',
+        durationMin: 415,
+      },
+      {
+        from: 'AUH',
+        fromCity: 'Abu Dhabi',
+        to: 'BOM',
+        toCity: 'Mumbai',
+        depart: '2026-06-25T02:15:00',
+        arrive: '2026-06-25T07:15:00',
+        flightNo: 'EY 202',
+        terminal: 'T1 (AUH) → T2 (BOM)',
+        aircraft: 'Airbus A320neo',
+        durationMin: 180,
+      },
+    ],
+  },
+];
